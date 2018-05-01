@@ -1,0 +1,24 @@
+
+<h2>My Products</h2>
+<table>
+  <tr>
+    <th>id</th>
+    <th>Name</th>
+    <th>upc</th>
+    <th>Description</th>
+    <th>Quantity on Hand</th>
+    <th>Price</th>
+    <th>In Stock</th>
+  </tr>
+  <tr *ngFor="let product of products" [class.selected]="product === selectedProduct" (click)="onSelect(product)">
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.upc}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.quantityOnHand}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.inInStock}}</td>
+  </tr>
+ </table>
+
+ <app-products-detail [product]="selectedProduct"></app-products-detail> 
